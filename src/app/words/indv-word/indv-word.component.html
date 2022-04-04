@@ -1,0 +1,48 @@
+<h2>My Deutsch-Arabic-English Dict</h2>
+<hr />
+<div class="col-md-4">
+  <form
+    autocomplete="off"
+    #clickedWordForm="ngForm"
+    (ngSubmit)="saveEdit(clickedWordForm.value)"
+  >
+    <div class="form-group">
+      <label for="deutsch">Deutsch:</label>
+      <input
+        id="deutsch"
+        name="deutsch"
+        type="text"
+        class="form-control"
+        [(ngModel)]="word!.deutsch"
+      />
+    </div>
+    <div class="form-group">
+      <label for="arabic">Arabic:</label>
+      <input
+        id="arabic"
+        name="arabic"
+        type="text"
+        class="form-control"
+        [(ngModel)]="word!.arabic"
+      />
+    </div>
+    <div class="form-group">
+      <label for="english">English:</label>
+      <input
+        id="english"
+        name="english"
+        type="text"
+        class="form-control"
+        [(ngModel)]="word!.english"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success">Edit</button>
+    <button type="button" class="btn btn-danger" (click)="deleteWord(word)">
+      Delete
+    </button>
+    <button type="button" class="btn btn-default" (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>
